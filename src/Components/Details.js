@@ -76,7 +76,7 @@ class Details extends React.Component {
         const resId = qs.restaurant;
 
         axios({
-            url: `https://afternoon-beach-59724.herokuapp.com/getrestaurantbyid/${resId}`,
+            url: `https://cryptic-tundra-27834.herokuapp.com/getrestaurantbyid/${resId}`,
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
@@ -125,7 +125,7 @@ formCheck = (event)=>{
         this.setState({ [state]: value })
         if(state == 'orderModalIsOpen'){
             axios({
-                url: `https://afternoon-beach-59724.herokuapp.com/menu/${restaurantId}`,
+                url: `https://cryptic-tundra-27834.herokuapp.com/menu/${restaurantId}`,
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             }).then(res => {
@@ -200,7 +200,7 @@ formCheck = (event)=>{
     }
 
     getData = (data) => {
-        return fetch(`https://afternoon-beach-59724.herokuapp.com/payment`, {
+        return fetch(`https://cryptic-tundra-27834.herokuapp.com/payment`, {
             method: "POST",
             headers: {
                 Accept: "application/json",
