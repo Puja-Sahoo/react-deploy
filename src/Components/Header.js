@@ -87,7 +87,7 @@ class Header extends React.Component {
         else{
             axios({
                 method: 'POST',
-                url: 'https://afternoon-beach-59724.herokuapp.com/usersignup ',
+                url: 'https://cryptic-tundra-27834.herokuapp.com/usersignup ',
                 headers: { 'Content-Type': 'application/json' },
                 data: {
                     first_name: first_name,
@@ -128,7 +128,7 @@ class Header extends React.Component {
         else{
             axios({
                 method: 'POST',
-                url: 'https://afternoon-beach-59724.herokuapp.com/login',
+                url: 'https://cryptic-tundra-27834.herokuapp.com/login',
                 headers: { 'Content-Type': 'application/json' },
                 data: {
 
