@@ -17,7 +17,7 @@ class Home extends React.Component {
     componentDidMount() {
         sessionStorage.clear();
         axios({
-            url: 'https://afternoon-beach-59724.herokuapp.com/location',
+            url: 'https://cryptic-tundra-27834.herokuapp.com/location',
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
