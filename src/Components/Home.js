@@ -26,7 +26,7 @@ class Home extends React.Component {
             }).catch(err => console.log(err))
 
         axios({
-            url: 'https://afternoon-beach-59724.herokuapp.com/mealType',
+            url: 'https://cryptic-tundra-27834.herokuapp.com/mealType',
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
