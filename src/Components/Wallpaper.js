@@ -7,7 +7,7 @@ class Wallpaper extends React.Component {
     constructor(){
         super();
         this.state={
-            restaurants:[],
+            restaurants:[]
             
         }
     }
@@ -20,7 +20,7 @@ class Wallpaper extends React.Component {
         sessionStorage.setItem('locationId', locationId);
 
         axios({
-            url: `https://afternoon-beach-59724.herokuapp.com/restaurantBylocation/${locationId}`,
+            url: `https://cryptic-tundra-27834.herokuapp.com/restaurantBylocation/${locationId}`,
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
