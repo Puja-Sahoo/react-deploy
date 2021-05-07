@@ -51,7 +51,7 @@ class Filter extends React.Component {
         // Call filter API 
         axios({
             method: 'POST',
-            url: 'https://cryptic-tundra-27834.herokuapp.com/filter',
+            url: `${process.env.REACT_APP_API_URL}/filter`,
             headers: { 'Content-Type': 'application/json' },
             data: {mealType :mealtype,
                   location : area
@@ -63,7 +63,7 @@ class Filter extends React.Component {
 
         //call location api 
         axios({
-            url: 'https://cryptic-tundra-27834.herokuapp.com/location',
+            url: `${process.env.REACT_APP_API_URL}/location`,
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
@@ -76,7 +76,7 @@ class Filter extends React.Component {
         const { mealtype, location, cuisine, lcost, hcost, page } = this.state;
         axios({ 
             method: 'POST',
-            url: 'https://cryptic-tundra-27834.herokuapp.com/filter',
+            url: `${process.env.REACT_APP_API_URL}/filter`,
             headers: { 'Content-Type': 'application/json' },
             data: {
                 sort: sort,
@@ -98,7 +98,7 @@ class Filter extends React.Component {
         const { mealtype, location, cuisine, sort, page } = this.state;
         axios({
             method: 'POST',
-            url: 'https://cryptic-tundra-27834.herokuapp.com/filter',
+            url: `${process.env.REACT_APP_API_URL}/filter`,
             headers: { 'Content-Type': 'application/json' },
             data: {
                 sort: sort,
@@ -137,7 +137,7 @@ class Filter extends React.Component {
         axios({
 
             method: 'POST',
-            url: 'https://cryptic-tundra-27834.herokuapp.com/filter',
+            url: `${process.env.REACT_APP_API_URL}/filter`,
             headers: { 'Content-Type': 'application/json' },
             data: {
                 sort: sort,
@@ -167,7 +167,7 @@ class Filter extends React.Component {
         axios({
 
             method: 'POST',
-            url: 'https://cryptic-tundra-27834.herokuapp.com/filter',
+            url: `${process.env.REACT_APP_API_URL}/filter`,
             headers: { 'Content-Type': 'application/json' },
             data: {
                 sort: sort,
@@ -193,7 +193,7 @@ class Filter extends React.Component {
     
         axios({
             method: 'POST',
-            url: 'https://cryptic-tundra-27834.herokuapp.com/filter',
+            url: `${process.env.REACT_APP_API_URL}/filter`,
             headers: { 'Content-Type': 'application/json' },
             data: {
                 sort: sort,
