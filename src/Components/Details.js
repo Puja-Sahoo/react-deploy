@@ -60,6 +60,7 @@ class Details extends React.Component {
             formModalIsOpen: false,
             restaurantId:undefined,
             menuItems:[],
+            totalMenuItem:[], 
             subTotal:0,
             userName: undefined,
             contactNumber: undefined,
@@ -74,9 +75,10 @@ class Details extends React.Component {
     componentDidMount() {
         const qs = queryStyring.parse(this.props.location.search);{/*capturing datas fro query string*/}
         const resId = qs.restaurant;
+        
 
         axios({
-            url: `https://cryptic-tundra-27834.herokuapp.com/getrestaurantbyid/${resId}`,
+            url: `${process.env.REACT_APP_API_URL}/getrestaurantbyid/${resId}`,
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
@@ -104,7 +106,9 @@ formCheck = (event)=>{
 
     // handle type of the order form veg/non-veg/all
     handleTypeChange =(type)=>{
-        const { restaurantId,menuItems } = this.state;
+        let { restaurantId,menuItems,totalMenuItem } = this.state;
+        menuItems = totalMenuItem;
+        
         if(type == "All"){
             this.setState({menuItems:menuItems})
     
@@ -125,11 +129,11 @@ formCheck = (event)=>{
         this.setState({ [state]: value })
         if(state == 'orderModalIsOpen'){
             axios({
-                url: `https://cryptic-tundra-27834.herokuapp.com/menu/${restaurantId}`,
+                url: `${process.env.REACT_APP_API_URL}/menu/${restaurantId}`,
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' }
             }).then(res => {
-                this.setState({ menuItems: res.data.itemsList })
+                this.setState({ menuItems: res.data.itemsList, totalMenuItem:res.data.itemsList  })
             }).catch(err => console.log(err))
         }
         else if (state == 'formModalIsOpen') {
@@ -200,7 +204,7 @@ formCheck = (event)=>{
     }
 
     getData = (data) => {
-        return fetch(`https://cryptic-tundra-27834.herokuapp.com/payment`, {
+        return fetch(`${process.env.REACT_APP_API_URL}/payment`, {
             method: "POST",
             headers: {
                 Accept: "application/json",
