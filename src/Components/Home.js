@@ -17,7 +17,7 @@ class Home extends React.Component {
     componentDidMount() {
         sessionStorage.clear();
         axios({
-            url: 'https://cryptic-tundra-27834.herokuapp.com/location',
+            url: `${process.env.REACT_APP_API_URL}/location`,
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
@@ -26,7 +26,7 @@ class Home extends React.Component {
             }).catch(err => console.log(err))
 
         axios({
-            url: 'https://cryptic-tundra-27834.herokuapp.com/mealType',
+            url: `${process.env.REACT_APP_API_URL}/mealType`,
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
