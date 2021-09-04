@@ -285,7 +285,7 @@ class Header extends React.Component {
                         <div>
                         <GoogleLogin
                             clientId="636632982617-1v2d8stt4ulin896cd1osqpksrntehfa.apps.googleusercontent.com"
-                            buttonText={<div className="google bttn" style={{ padding: "0px 87px 2px 22px",width: "100%",fontWeight:"500"}}>Continue with Gmail</div>}
+                            buttonText={<div className="google bttn" style={{ padding: "0px 87px 2px 22px",width: "100%",fontWeight:"500" ,color:"black"}}>Continue with Gmail</div>}
                             onSuccess={this.responseGoogle}
                             onFailure={this.responseGoogle}
                             cookiePolicy={'single_host_origin'}
